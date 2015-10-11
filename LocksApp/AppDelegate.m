@@ -37,9 +37,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //  iphone 6s results:
-//          sync    spin	GCD     NSLock	pthread
-//    read	25.096	9.091	17.757	13.715	10.238
-//    write	25.12	9.875	200.087	14.981	11.805
+//          sync      spin       GCD    NSLock   pthread
+//  read    25.096   9.091    17.757    13.715   10.238
+//  write   25.12    9.875   200.087    14.981   11.805
     [self profileLockingStrategy:LockingStrategyGCD withName:@"GCD"];
     [self profileLockingStrategy:LockingStrategySynchronized withName:@"@synchronized"];
     [self profileLockingStrategy:LockingStrategySpinlock withName:@"spinlock"];
